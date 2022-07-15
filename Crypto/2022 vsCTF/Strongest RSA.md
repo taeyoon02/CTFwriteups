@@ -1,4 +1,4 @@
-# StrongestRSA
+# Strongest RSA
 
 ## files
 
@@ -85,6 +85,7 @@ if we get possible p and q value, compare p * q == n. and get real p and q.
 ```python
 from sympy import prevprime
 from gmpy2 import *
+from binascii import unhexlify
 
 e = 0x10001
 p0 = 163753477176210014003355280732229891908166074468271556144642666169325605017666799921295576722168608401188682320182653287668989748162506955989407213845500704903463544753049275828138559289189335596749709834289278256382427251831790026921563375111737350084174473833546767952081017613072491759534988253353621530923
@@ -155,7 +156,7 @@ d = invert(e,phi)
 print(unhexlify(hex(powmod(c,d,N))[2:].encode()))
 ```
 
-this takes some times(repeat : 4919 * 4 + α times minute: 7min) but we can finally get message:
+this takes some times but we can finally get message:
 
 `b'vsctf{Strongest_can_be_the_weakest:(}'`
 
